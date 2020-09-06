@@ -122,9 +122,7 @@ class ContactForm extends Component {
           <p>For work enquries please complete the form below.</p>
           {this.messageSuccess()}
         </div>
-        <div className="contact-footer">
-          {/* <span>&copy; DanMarksteiner 2020</span> */}
-        </div>
+        <div className="contact-footer"></div>
       </section>
     )
   }

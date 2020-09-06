@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
+import NetlifyForm from '../components/NetlifyForm'
 import Header from '../components/Header'
 import ProjectsList from '../components/ProjectsList'
 import FeaturedSkills from '../components/FeaturedSkills'
@@ -22,6 +23,7 @@ class RootIndex extends React.Component {
           />
           <title>Dan Marksteiner - Developer | Digital Producer</title>
         </Helmet>
+        <NetlifyForm />
         <main className="App__main">
           <Header />
           <ProjectsList projects={projects} />

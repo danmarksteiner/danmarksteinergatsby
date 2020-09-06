@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
+import NetlifyForm from '../components/NetlifyForm'
 import ProjectSpotlight from '../components/ProjectSpotlight'
 import RichTextRenderer from '../components/RichTextRenderer'
 import ProjectBanners from '../components/ProjectBanners'
@@ -25,6 +26,7 @@ class ProjectTemplate extends React.Component {
           />
           <title>Dan Marksteiner - Developer | Digital Producer</title>
         </Helmet>
+        <NetlifyForm />
         <main className="App__main">
           <div className="project-page">
             <ProjectSpotlight project={project} />

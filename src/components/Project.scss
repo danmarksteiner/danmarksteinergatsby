@@ -1,0 +1,15 @@
+.project-page {
+    article {
+      margin: auto;
+      padding: 30px 18px;
+      max-width: 970px;
+      @media (min-width: 970px) {
+        padding: 60px 18px;
+      }
+      img,
+      video {
+        margin: 40px 0;
+      }
+    }
+  }
+  

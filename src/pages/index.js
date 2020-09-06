@@ -1,0 +1,61 @@
+import React from 'react'
+import { graphql } from 'gatsby'
+import get from 'lodash/get'
+import { Helmet } from 'react-helmet'
+import Header from '../components/header'
+import ProjectsList from '../components/ProjectsList'
+import FeaturedSkills from '../components/FeaturedSkills'
+import ContactForm from '../components/ContactForm'
+import '../components/App.scss'
+
+class RootIndex extends React.Component {
+  render() {
+    const projects = get(this.props, 'data.allContentfulProject')
+    const featuredSkills = get(this.props, 'data.allContentfulFeaturedSkills')
+
+    return (
+      <div className="App">
+        <main className="App__main">
+        <Header />
+        <ProjectsList projects={projects} />
+        <FeaturedSkills featuredSkills={featuredSkills} />
+        <ContactForm />
+        <div className="contact-me">
+          <button>Contact</button>
+        </div>
+        </main>
+      </div>
+    )
+  }
+}
+
+export default RootIndex
+
+export const pageQuery = graphql`
+query ProjectsSkills {
+  allContentfulProject {
+    nodes {
+      thumbnailImage {
+        file {
+          url
+        }
+      }
+      projectName
+      thumbnailDescription
+      id
+      canonicalUrl
+    }
+  }
+  allContentfulFeaturedSkills {
+    nodes {
+      skillName
+      skillIcon {
+        file {
+          url
+        }
+      }
+      id
+    }
+  }
+}
+`

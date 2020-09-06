@@ -1,14 +1,14 @@
-import React from 'react';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import SingleImageAsset from './SingleImageAsset';
+import React from 'react'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import SingleImageAsset from './SingleImageAsset'
 
 const RichTextRenderer = ({ richTextDocument }) => {
-  const website_url = 'https://danmarksteiner.com';
+  const website_url = 'https://danmarksteiner.com'
   const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [INLINES.HYPERLINK]: node => {
+      [INLINES.HYPERLINK]: (node) => {
         return (
           <a
             href={node.data.uri}
@@ -21,18 +21,15 @@ const RichTextRenderer = ({ richTextDocument }) => {
           >
             {node.content[0].value}
           </a>
-        );
+        )
       },
-      [BLOCKS.EMBEDDED_ASSET]: node => (
-        <SingleImageAsset
-          imageAsset={node.data.target.fields.file.en_US}
-        />
-      )
-    }
-  };
+      [BLOCKS.EMBEDDED_ASSET]: (node) => (
+        <SingleImageAsset imageAsset={node.data.target.fields.file.en_US} />
+      ),
+    },
+  }
   return (
-    <article>{documentToReactComponents(richTextDocument, options)}    {console.log(richTextDocument)}</article>
-
-  );
-};
-export default RichTextRenderer;
+    <article>{documentToReactComponents(richTextDocument, options)}</article>
+  )
+}
+export default RichTextRenderer

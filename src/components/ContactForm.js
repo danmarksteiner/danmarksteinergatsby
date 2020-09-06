@@ -1,53 +1,53 @@
-import './ContactForm.scss';
-import React, { Component } from 'react';
+import './ContactForm.scss'
+import React, { Component } from 'react'
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 class ContactForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       name: '',
       email: '',
       message: '',
-      messageSent: false
-    };
+      messageSent: false,
+    }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state })
+      body: encode({ 'form-name': 'contact', ...this.state }),
     })
       .then(
         this.setState({ messageSent: true }),
         this.resetForm(),
         this.messageSuccess()
       )
-      .catch(error => alert(error));
+      .catch((error) => alert(error))
 
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
-  currentYear = new Date().getFullYear();
+  currentYear = new Date().getFullYear()
   onNameChange(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ name: event.target.value })
   }
 
   onEmailChange(event) {
-    this.setState({ email: event.target.value });
+    this.setState({ email: event.target.value })
   }
 
   onMessageChange(event) {
-    this.setState({ message: event.target.value });
+    this.setState({ message: event.target.value })
   }
   resetForm() {
-    this.setState({ name: '', email: '', message: '' });
+    this.setState({ name: '', email: '', message: '' })
   }
   messageSuccess = () => {
     if (this.state.messageSent === true) {
@@ -58,7 +58,7 @@ class ContactForm extends Component {
             possible.
           </p>
         </div>
-      );
+      )
     }
     return (
       <form
@@ -111,8 +111,8 @@ class ContactForm extends Component {
           </div>
         </div>
       </form>
-    );
-  };
+    )
+  }
 
   render() {
     return (
@@ -123,11 +123,11 @@ class ContactForm extends Component {
           {this.messageSuccess()}
         </div>
         <div className="contact-footer">
-          <span>&copy; DanMarksteiner 2020</span>
+          {/* <span>&copy; DanMarksteiner 2020</span> */}
         </div>
       </section>
-    );
+    )
   }
 }
 
-export default ContactForm;
+export default ContactForm

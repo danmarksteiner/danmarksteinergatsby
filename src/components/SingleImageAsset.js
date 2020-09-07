@@ -1,5 +1,5 @@
-import './SingleImageAsset.scss';
-import React from 'react';
+import './SingleImageAsset.scss'
+import React from 'react'
 
 const SingleImageAsset = ({ imageAsset }) => {
   if (imageAsset) {
@@ -9,18 +9,11 @@ const SingleImageAsset = ({ imageAsset }) => {
           <source src={imageAsset.url} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      );
+      )
     }
-    return (
-      <img
-        src={imageAsset.url}
-        alt={imageAsset.description}
-      />
-    );
+    return <img src={imageAsset.url} alt={imageAsset.description} />
   } else {
-    return (
-      <span>Loading</span>
-    )
+    return <span></span>
   }
-};
-export default SingleImageAsset;
+}
+export default SingleImageAsset

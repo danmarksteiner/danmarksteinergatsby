@@ -1,12 +1,13 @@
-import React from 'react';
-import SingleImageAsset from './SingleImageAsset';
+import React from 'react'
+import Img from 'gatsby-image'
 
-const ProjectThumbnail = ({project}) => {
+const ProjectThumbnail = ({ project }) => {
   return (
     <a href={`/projects/${project.canonicalUrl}`}>
-        <SingleImageAsset
-            imageAsset={project.thumbnailImage.file}
-        />
+      <Img
+        fluid={{ ...project.thumbnailImage.fluid, aspectRatio: 8 / 5 }}
+        alt={project.thumbnailDescription}
+      />
       <div className="projects-list-overlay">
         <div>
           <h4>{project.projectName}</h4>
@@ -14,6 +15,6 @@ const ProjectThumbnail = ({project}) => {
         </div>
       </div>
     </a>
-  );
-};
-export default ProjectThumbnail;
+  )
+}
+export default ProjectThumbnail

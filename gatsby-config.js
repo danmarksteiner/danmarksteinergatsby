@@ -44,22 +44,22 @@ module.exports = {
         fonts: [
           {
             family: `Open Sans`,
-            variants: [`300`, `400`]
+            variants: [`300`, `400`],
           },
           {
             family: `Open Sans`,
-            subsets: [`latin`]
+            subsets: [`latin`],
           },
           {
             family: `Raleway`,
-            variants: [`300`, `400`]
+            variants: [`300`, `400`],
           },
           {
             family: `Raleway`,
-            subsets: [`latin`]
+            subsets: [`latin`],
           },
         ],
       },
-    }
+    },
   ],
 }

@@ -48,6 +48,9 @@ export const pageQuery = graphql`
           file {
             url
           }
+          fluid(maxWidth: 720, maxHeight: 450, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
         }
         projectName
         thumbnailDescription
@@ -59,8 +62,8 @@ export const pageQuery = graphql`
       nodes {
         skillName
         skillIcon {
-          file {
-            url
+          fluid(maxWidth: 75, maxHeight: 75, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
           }
         }
         id

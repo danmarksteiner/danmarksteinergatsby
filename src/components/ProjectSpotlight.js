@@ -1,26 +1,28 @@
-import './ProjectSpotlight.scss';
-import React from 'react';
-import SingleImageAsset from './SingleImageAsset';
+import './ProjectSpotlight.scss'
+import React from 'react'
+import SingleImageAsset from './SingleImageAsset'
+import Img from 'gatsby-image'
 
 const ProjectSpotlight = ({ project }) => {
-
-    const spotlightImage = () => {
-      if (typeof window !== `undefined`) {
-      const mobile = window.matchMedia('(max-width: 767px)');
+  const spotlightImage = () => {
+    if (typeof window !== `undefined`) {
+      const mobile = window.matchMedia('(max-width: 767px)')
       if (mobile.matches) {
         return (
-          <SingleImageAsset
-            imageAsset={project.mobileSpotlight.file}
+          <Img
+            fluid={{ ...project.mobileSpotlight.fluid, aspectRatio: 460 / 403 }}
+            alt={project.projectMainImage.description}
           />
-        );
+        )
       }
       return (
-        <SingleImageAsset
-          imageAsset={project.projectMainImage.file}
+        <Img
+          fluid={{ ...project.projectMainImage.fluid, aspectRatio: 16 / 5 }}
+          alt={project.projectMainImage.description}
         />
-      );
-      }
-    };
+      )
+    }
+  }
   return (
     <div className="spotlight">
       {spotlightImage()}
@@ -32,7 +34,7 @@ const ProjectSpotlight = ({ project }) => {
         <h3>Roles - {project.roles}</h3>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectSpotlight;
+export default ProjectSpotlight

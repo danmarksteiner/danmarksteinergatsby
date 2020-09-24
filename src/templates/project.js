@@ -14,7 +14,6 @@ import '../components/Project.scss'
 class ProjectTemplate extends React.Component {
   render() {
     const project = get(this.props, 'data.contentfulProject')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <div className="App">
@@ -67,6 +66,9 @@ export const pageQuery = graphql`
           url
           contentType
         }
+        fluid(maxWidth: 1920, maxHeight: 600, resizingBehavior: SCALE) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
         description
       }
       mobileSpotlight {
@@ -74,6 +76,9 @@ export const pageQuery = graphql`
         file {
           url
           contentType
+        }
+        fluid(maxWidth: 460, maxHeight: 403, resizingBehavior: SCALE) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
         description
       }

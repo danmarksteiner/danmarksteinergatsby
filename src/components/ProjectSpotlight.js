@@ -1,6 +1,5 @@
 import './ProjectSpotlight.scss'
 import React from 'react'
-import SingleImageAsset from './SingleImageAsset'
 import Img from 'gatsby-image'
 
 const ProjectSpotlight = ({ project }) => {

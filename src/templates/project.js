@@ -14,37 +14,43 @@ import '../components/Project.scss'
 class ProjectTemplate extends React.Component {
   render() {
     const project = get(this.props, 'data.contentfulProject')
-
-    return (
-      <div className="App">
-        <Helmet>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            name="description"
-            content="Dan Marksteiner - Developer | Digital Producer"
-          />
-          <title>Dan Marksteiner - Developer | Digital Producer</title>
-        </Helmet>
-        <NetlifyForm />
-        <main className="App__main">
-          <div className="project-page">
-            <ProjectSpotlight project={project} />
-            <RichTextRenderer richTextDocument={project.projectDescription} />
-            {project.addBanners === true && (
-              <ProjectBanners project={project} />
-            )}
-            {project.showProjectBodyImages === true && (
-              <ProjectCarousel projectImages={project.projectBodyImages} />
-            )}
-            <RichTextRenderer richTextDocument={project.footerText.json} />
-            <ContactForm />
-            <div className="contact-me">
-              <button>Contact</button>
+    if (project) {
+      return (
+        <div className="App">
+          <Helmet>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <meta
+              name="description"
+              content="Dan Marksteiner - Developer | Digital Producer"
+            />
+            <title>Dan Marksteiner - Developer | Digital Producer</title>
+          </Helmet>
+          <NetlifyForm />
+          <main className="App__main">
+            <div className="project-page">
+              <ProjectSpotlight project={project} />
+              <RichTextRenderer richTextDocument={project.projectDescription} />
+              {project.addBanners === true && (
+                <ProjectBanners project={project} />
+              )}
+              {project.showProjectBodyImages === true && (
+                <ProjectCarousel projectImages={project.projectBodyImages} />
+              )}
+              <RichTextRenderer richTextDocument={project.footerText.json} />
+              <ContactForm />
+              <div className="contact-me">
+                <button>Contact</button>
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
-    )
+          </main>
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
   }
 }
 

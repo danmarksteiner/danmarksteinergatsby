@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "DanMarksteiner.com",
+  "description": "Dan Marksteiner portfolio website",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Dan Marksteiner",
   "bugs": {
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
@@ -22,7 +22,7 @@
     "lodash": "^4.17.15",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.3.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-iframe": "^1.8.0",

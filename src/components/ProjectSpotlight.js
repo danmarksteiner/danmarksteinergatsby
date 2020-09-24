@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 const ProjectSpotlight = ({ project }) => {
   const spotlightImage = () => {
     if (project) {
-      if (typeof window !== `undefined`) {
+      if (typeof window !== 'undefined') {
         const mobile = window.matchMedia('(max-width: 767px)')
         if (mobile.matches) {
           return (

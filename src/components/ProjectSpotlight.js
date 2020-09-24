@@ -9,35 +9,32 @@ const ProjectSpotlight = ({ project }) => {
         const mobile = window.matchMedia('(max-width: 767px)')
         if (mobile.matches) {
           return (
-            <div>
-              <Img
-                fluid={{
-                  ...project.mobileSpotlight.fluid,
-                  aspectRatio: 460 / 403,
-                }}
-                alt={project.projectMainImage.description}
-              />
-              <div className="spotlight-overlay"></div>
-            </div>
+            <Img
+              fluid={{
+                ...project.mobileSpotlight.fluid,
+                aspectRatio: 460 / 403,
+              }}
+              alt={project.projectMainImage.description}
+            />
           )
         }
         return (
-          <div>
-            <Img
-              fluid={{ ...project.projectMainImage.fluid, aspectRatio: 16 / 5 }}
-              alt={project.projectMainImage.description}
-            />
-            <div className="spotlight-overlay"></div>
-          </div>
+          <Img
+            fluid={{ ...project.projectMainImage.fluid, aspectRatio: 16 / 5 }}
+            alt={project.projectMainImage.description}
+          />
         )
       }
     } else {
-      return <div></div>
+      return <div className="spotlight-image"></div>
     }
   }
   return (
     <div className="spotlight">
-      {spotlightImage()}
+      <div className="spotlight-image">
+        {spotlightImage()}
+        <div className="spotlight-overlay"></div>
+      </div>
       <div className="spotlight-text">
         <h1>{project.projectName}</h1>
         <h2>Agency - {project.agency}</h2>

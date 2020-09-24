@@ -1,30 +1,29 @@
 import './ProjectSpotlight.scss'
 import React from 'react'
+import useDeviceDetect from '../utils/useDeviceDetect'
 import Img from 'gatsby-image'
 
 const ProjectSpotlight = ({ project }) => {
+  const { isMobile } = useDeviceDetect()
   const spotlightImage = () => {
     if (project) {
-      if (typeof window !== 'undefined') {
-        const mobile = window.matchMedia('(max-width: 767px)')
-        if (mobile.matches) {
-          return (
-            <Img
-              fluid={{
-                ...project.mobileSpotlight.fluid,
-                aspectRatio: 460 / 403,
-              }}
-              alt={project.projectMainImage.description}
-            />
-          )
-        }
+      if (isMobile) {
         return (
           <Img
-            fluid={{ ...project.projectMainImage.fluid, aspectRatio: 16 / 5 }}
+            fluid={{
+              ...project.mobileSpotlight.fluid,
+              aspectRatio: 460 / 403,
+            }}
             alt={project.projectMainImage.description}
           />
         )
       }
+      return (
+        <Img
+          fluid={{ ...project.projectMainImage.fluid, aspectRatio: 16 / 5 }}
+          alt={project.projectMainImage.description}
+        />
+      )
     } else {
       return <div className="spotlight-image"></div>
     }

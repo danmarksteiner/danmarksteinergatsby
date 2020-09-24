@@ -48,7 +48,7 @@ export const pageQuery = graphql`
           file {
             url
           }
-          fluid(maxWidth: 720, maxHeight: 450, resizingBehavior: SCALE) {
+          fluid(maxWidth: 414, maxHeight: 259, resizingBehavior: SCALE) {
             ...GatsbyContentfulFluid_tracedSVG
           }
         }

@@ -1,22 +1,22 @@
-import './ProjectBanners.scss';
-import React from 'react';
-import SingleImageAsset from './SingleImageAsset';
-import Iframe from 'react-iframe';
+import './ProjectBanners.scss'
+import React from 'react'
+import useDeviceDetect from '../utils/useDeviceDetect'
+import SingleImageAsset from './SingleImageAsset'
+import Iframe from 'react-iframe'
+
 const ProjectBanners = ({ project }) => {
-  const canonicalUrl = project.canonicalUrl;
+  const canonicalUrl = project.canonicalUrl
+  const { isMobile } = useDeviceDetect()
+
   const responsiveBanner = () => {
-    if (typeof window !== `undefined`) {
-      const mobile = window.matchMedia('(max-width: 767px)');
-      if (mobile.matches) {
-        return (
-          <div className="project-page-banners">
-            <SingleImageAsset
-              imageAsset={project.mobileBanners.file}
-            />
-          </div>
-        );
-      }
+    if (isMobile) {
+      return (
+        <div className="project-page-banners">
+          <SingleImageAsset imageAsset={project.mobileBanners.file} />
+        </div>
+      )
     }
+
     return (
       <div className="project-page-banners">
         {project.bannerDmpu === true && (
@@ -75,8 +75,8 @@ const ProjectBanners = ({ project }) => {
           />
         )}
       </div>
-    );
-  };
-  return <div>{responsiveBanner()}</div>;
-};
-export default ProjectBanners;
+    )
+  }
+  return <div>{responsiveBanner()}</div>
+}
+export default ProjectBanners

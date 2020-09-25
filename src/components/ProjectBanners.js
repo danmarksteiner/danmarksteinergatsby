@@ -78,7 +78,7 @@ const ProjectBanners = ({ project }) => {
         </div>
         <article>
           <p>
-            Please note banners may not display correctly if you running an
+            Please note banners may not display correctly if you are running an
             adblock plugin in your browser.
           </p>
         </article>

@@ -1,0 +1,186 @@
+
+/* --------------------------
+Global Reset ----------------
+-------------------------- */
+
+* {
+	border: 0;
+	margin: 0;
+	user-select: none;
+	box-sizing: border-box;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+img {
+	display: block;
+}
+
+
+
+
+
+/* --------------------------
+Global Style ----------------
+-------------------------- */
+
+body {
+	font-family: "Raleway";
+	font-weight: 400;
+	font-size: 12px;
+	color: #cecece;
+	letter-spacing: 0.35px;
+	word-spacing: 1px;
+	line-height: 1.4;
+}
+
+#banner_ad {
+	display: block;
+	width: 728px;
+	height: 90px;
+	background: #ffffff;
+	border: 1px solid #000000;
+	position: relative;
+	overflow: hidden;
+}
+
+#banner_ad * {
+	position: absolute;
+}
+
+/* --------------------------
+Frame Styles ----------------
+-------------------------- */
+
+.frame {
+	width: 728px;
+	height: 90px;
+	top: -1px;
+	left: -1px;
+	visibility: hidden;
+	background: #3273ad;
+}
+
+
+
+
+/* --------------------------
+Global ----------------------
+-------------------------- */
+
+/* Loading Spinner */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+#global_load {
+	left: 50%;
+	top: 50%;
+	margin-left: -12px;
+	margin-top: -12px;
+
+	animation: spin 0.5s linear infinite;
+	-webkit-animation: spin 0.5s linear infinite;
+}
+
+
+
+
+
+/* --------------------------
+Frame 1 ---------------------
+-------------------------- */
+#frame1_bg_pooh, #frame1_bg_eeyohh, #frame1_bg_piglet, #frame1_bg_tigger, #frame1_bg_pooh2{
+	width: 728px;
+	height: 90px;
+}
+
+#frame1_eeyohh {
+	left: 0px;
+	top: 0px;
+}
+
+#frame1_piglet {
+	left: 0px;
+	top: 0px;
+}
+
+#frame1_tigger {
+	left: 11px;
+	top: 0px;
+}
+
+#frame1_tt {
+	left: 238px;
+	top: 9px;
+}
+
+#frame1_sub {
+	left: 241px;
+	top: 72px;
+}
+
+#frame1_release {
+	left: 529px;
+	top: 28px;
+}
+
+#frame1_legal {
+	right: 5px;
+	bottom: 5px;
+	font-family: helvetica, arial, tahoma, sans-serif;
+	font-size: 7px;
+	line-height: 7px;
+	color: #cecece;
+}
+
+/* --------------------------
+Exits -----------------------
+-------------------------- */
+
+#main_exit {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 50;
+	visibility: hidden;
+}
+
+#cta_exit {
+	display:block;
+	width: 168px;
+	height: 22px;
+	left: 539px;
+	top: 45px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 51;
+	visibility: hidden;
+	background: url('../images/cta.png') no-repeat top left;
+}
+
+#cta_exit:hover {
+	background: url('../images/cta.png') no-repeat bottom left;
+}

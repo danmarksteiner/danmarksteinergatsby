@@ -1,0 +1,253 @@
+
+/* --------------------------
+Global Reset ----------------
+-------------------------- */
+
+* {
+	border: 0;
+	margin: 0;
+	user-select: none;
+	box-sizing: border-box;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+img {
+	display: block;
+}
+
+
+
+
+
+/* --------------------------
+Global Style ----------------
+-------------------------- */
+
+body {
+	font-family: "Raleway";
+	font-weight: 400;
+	font-size: 12px;
+	color: #cecece;
+	letter-spacing: 0.35px;
+	word-spacing: 1px;
+	line-height: 1.4;
+}
+
+#banner_ad {
+	display: block;
+	width: 300px;
+	height: 250px;
+	background: #000000;
+	border: 1px solid #000000;
+	position: relative;
+	overflow: hidden;
+}
+
+#banner_ad * {
+	position: absolute;
+}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+
+
+/* --------------------------
+Frame Styles ----------------
+-------------------------- */
+
+.frame {
+	width: 300px;
+	height: 250px;
+	top: -1px;
+	left: -1px;
+	visibility: hidden;
+}
+
+
+
+
+/* --------------------------
+Global ----------------------
+-------------------------- */
+
+/* Loading Spinner */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+#global_load {
+	left: 50%;
+	top: 50%;
+	margin-left: -12px;
+	margin-top: -12px;
+
+	animation: spin 0.5s linear infinite;
+	-webkit-animation: spin 0.5s linear infinite;
+}
+
+
+
+
+/* --------------------------
+Frame 1 ---------------------
+-------------------------- */
+#frame1_bg {
+	width: 300px;
+	height: 250px;
+}
+
+#frame1_tt {
+	left: 89px;
+	top: 176px;
+}
+
+#frame1_release {
+	left: 16px;
+	top: 188px;
+}
+
+#frame1_download {
+	left: 39px;
+	top: 179px;
+}
+
+#frame1_prime {
+	left: 157px;
+	top: 178px;
+}
+
+#legal {
+	left: 23px;
+	top: 236px;
+	width: 254px;
+}
+
+#legal p {
+	font-family: arial, sans-serif;
+	font-size: 4.5px;
+	color: #666666;
+	opacity: 0.58;
+	position: initial !important;
+	text-align: center;
+	display: block;
+}
+
+/* --------------------------
+Videoframe ------------------
+-------------------------- */
+
+#videoframe {
+	top: 0;
+	left:0;
+	width: 300px;
+	height: 172px;
+	visibility:hidden;
+}
+
+#video1 {
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 172px;
+	z-index: 50;
+}
+
+/* --------------------------
+Endframe -----------------------
+-------------------------- */
+
+#endframe_bg {
+	width: 300px;
+	height: 250px;
+}
+
+#endframe_tt {
+	left: 11px;
+	top: 167px;
+}
+
+#endframe_release {
+	left: 124px;
+	top: 171px;
+}
+
+#endframe_prime {
+	left: 210px;
+	top: 186px;
+}
+
+#endframe_legal {
+	left: 46px;
+	top: 236px;
+	width: 254px;
+}
+
+#endframe_legal p {
+	font-family: arial, sans-serif;
+	font-size: 4.5px;
+	color: #666666;
+	opacity: 0.58;
+	position: initial !important;
+	text-align: center;
+	display: block;
+}
+
+/* --------------------------
+Exits -----------------------
+-------------------------- */
+
+#main_exit {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 50;
+	visibility: hidden;
+}
+
+#cta_exit {
+	width: 72px;
+	height: 19px;
+	left: 125px;
+	top: 187px;
+	position: relative;
+	cursor: pointer;
+	z-index: 49;
+	visibility: hidden;
+}
+
+#cta_exit img {
+	top: 0;
+	left: 0;
+}

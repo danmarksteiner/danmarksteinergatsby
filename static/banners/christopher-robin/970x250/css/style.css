@@ -1,0 +1,226 @@
+
+/* --------------------------
+Global Reset ----------------
+-------------------------- */
+
+* {
+	border: 0;
+	margin: 0;
+	user-select: none;
+	box-sizing: border-box;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+img {
+	display: block;
+}
+
+
+
+
+
+/* --------------------------
+Global Style ----------------
+-------------------------- */
+
+body {
+	font-family: "Raleway";
+	font-weight: 400;
+	font-size: 12px;
+	color: #cecece;
+	letter-spacing: 0.35px;
+	word-spacing: 1px;
+	line-height: 1.4;
+}
+
+#banner_ad {
+	display: block;
+	width: 970px;
+	height: 250px;
+	background: #ffffff;
+	border: 1px solid #000000;
+	position: relative;
+	overflow: hidden;
+}
+
+#banner_ad * {
+	position: absolute;
+}
+
+/* --------------------------
+Frame Styles ----------------
+-------------------------- */
+
+.frame {
+	width: 970px;
+	height: 250px;
+	top: -1px;
+	left: -1px;
+	visibility: hidden;
+	background: #ffffff;
+}
+
+
+
+
+/* --------------------------
+Global ----------------------
+-------------------------- */
+
+/* Loading Spinner */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+#global_load {
+	left: 50%;
+	top: 50%;
+	margin-left: -12px;
+	margin-top: -12px;
+
+	animation: spin 0.5s linear infinite;
+	-webkit-animation: spin 0.5s linear infinite;
+}
+
+
+
+
+/* --------------------------
+Frame 1 ---------------------
+-------------------------- */
+#frame1_bg_pooh, #frame1_bg_eeyohh, #frame1_bg_piglet, #frame1_bg_tigger, #frame1_bg_pooh2{
+	width: 970px;
+	height: 250px;
+}
+
+#frame1_eeyohh {
+	left: -44px;
+	top: -29px;
+}
+
+#frame1_piglet {
+	left: 0px;
+	top: 0px;
+}
+
+#frame1_piglet_scarf {
+	left: 155px;
+	top: 145px;
+}
+
+#frame1_tigger {
+	left: -59px;
+	top: 7px;
+}
+
+#frame1_tt {
+	left: 436px;
+	top: 49px;
+}
+
+#frame1_sub {
+	left: 482px;
+	top: 14px;
+}
+
+#frame1_release {
+	left: 538px;
+	top: 172px;
+}
+
+#frame1_legal {
+	right: 5px;
+	bottom: 5px;
+	font-family: helvetica, arial, tahoma, sans-serif;
+	font-size: 7px;
+	line-height: 7px;
+	color: #cecece;
+}
+
+/* --------------------------
+Videoframe ------------------
+-------------------------- */
+#videoframe {
+	top: 0;
+	left:0;
+	width: 970px;
+	height: 250px;
+	visibility:hidden;
+}
+
+#video1 {
+	top: 0;
+	left: 0;
+	width: 970px;
+	height: 250px;
+	z-index: 50;
+}
+
+#video_tt {
+	bottom: 15px;
+	left: 15px;
+	z-index: 50;
+	width: 200px;
+	height: auto;
+	opacity: 1;
+}
+
+#video_release {
+	bottom: 15px;
+	right: 15px;
+	z-index: 50;
+	opacity: 1;
+	width: 300px;
+}
+
+/* --------------------------
+Exits -----------------------
+-------------------------- */
+
+#main_exit {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 52;
+	visibility: hidden;
+}
+
+#cta_exit {
+	display:block;
+	width: 261px;
+	height: 32px;
+	left: 563px;
+	top: 211px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 53;
+	visibility: hidden;
+	background: url('../images/cta.png') no-repeat top left;
+}
+
+#cta_exit:hover {
+	background: url('../images/cta.png') no-repeat bottom left;
+}

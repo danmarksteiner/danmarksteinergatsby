@@ -74,6 +74,10 @@ const ProjectBanners = ({ project }) => {
             scrolling="no"
           />
         )}
+        <p>
+          Please note banners will not display correctly if you running an
+          adblock plugin in your browser. Please disable on this page to view.
+        </p>
       </div>
     )
   }

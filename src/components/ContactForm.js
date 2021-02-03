@@ -67,11 +67,12 @@ class ContactForm extends Component {
         name="contact"
         onSubmit={this.handleSubmit}
       >
-        <input type="hidden" name="contact" value="the-name-of-the-html-form" />
+        <input type="hidden" name="contact" value="contact" />
         <div className="form-group">
           <div className="field-wrap">
             <label htmlFor="name">Name</label>
             <input
+              name="name"
               type="text"
               className="form-control"
               value={this.state.name}
@@ -82,6 +83,7 @@ class ContactForm extends Component {
           <div className="field-wrap">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input
+              name="email"
               type="email"
               className="form-control"
               aria-describedby="emailHelp"
@@ -95,6 +97,7 @@ class ContactForm extends Component {
           <div className="field-wrap">
             <label htmlFor="message">Message</label>
             <textarea
+              name="message"
               className="form-control"
               rows="5"
               value={this.state.message}
